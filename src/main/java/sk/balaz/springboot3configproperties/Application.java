@@ -1,5 +1,6 @@
 package sk.balaz.springboot3configproperties;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,9 +15,12 @@ public class Application {
 
     @Component
     class AppInitializer implements CommandLineRunner {
+        @Value("${app.version}")
+        private String appVersion;
+
         @Override
         public void run(String... args) throws Exception {
-
+            System.out.println("appVersion:"+ appVersion);
         }
     }
 
