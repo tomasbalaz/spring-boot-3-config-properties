@@ -1,5 +1,6 @@
 package sk.balaz.springboot3configproperties;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -22,9 +23,13 @@ public class Application {
         @Value("${app.version}")
         private String appVersion;
 
+        @Autowired
+        private ApplicationProperties properties;
+
         @Override
         public void run(String... args) throws Exception {
             System.out.println("appVersion:"+ appVersion);
+            System.out.println("Version:" + properties.getVersion());
         }
     }
 
