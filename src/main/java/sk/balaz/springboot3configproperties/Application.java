@@ -30,6 +30,7 @@ public class Application {
         public void run(String... args) throws Exception {
             System.out.println("appVersion:"+ appVersion);
             System.out.println("Version:" + properties.getVersion());
+            System.out.println("All properties:" + properties);
         }
     }
 
